@@ -1,0 +1,239 @@
+name: nurebo
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 0.2.9
+
+environment:
+  sdk: '>=3.0.2 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.9
+  flutter_staggered_grid_view: ^0.4.1
+  #  flutter_staggered_grid_view: ^0.6.0
+  path_provider: ^2.1.3
+  google_fonts: ^4.0.4
+  page_transition: ^2.1.0
+  fluttertoast: ^8.2.8
+  #  flutter_local_notifications: ^9.9.0
+  flutter_local_notifications: ^17.2.2
+  #  socket_io_client: ^1.0.2
+  socket_io_client: ^2.0.3+1
+  pin_code_text_field: ^1.8.0
+#  carousel_slider: ^4.2.1
+  carousel_slider: ^5.1.1
+  cached_network_image: ^3.3.1
+#  gradient_widgets: ^0.6.0
+  marquee_widget: ^1.2.0
+  provider: ^6.1.2
+  #  shared_preferences: ^2.0.15
+  shared_preferences: ^2.3.2
+  date_picker_timeline: ^1.2.6
+  another_flushbar: ^1.12.30
+  email_validator: ^3.0.0
+  regexpattern: ^2.6.0
+  sqflite: ^2.3.3+1
+#  telephony: ^0.2.0
+  permission_handler: ^11.3.1
+  mime: ^1.0.6
+  #  flutter_background_service: ^0.2.6
+  #  flutter_background_service: ^2.1.3
+  #  flutter_background_service: ^2.4.3
+  #  flutter_background_service_android: ^2.0.3
+  #  flutter_background_service_android: ^3.0.1
+  #  flutter_background_service_ios: ^2.4.0
+#  just_audio: ^0.9.38
+#  flutter_phoenix: ^1.1.1
+  smooth_page_indicator: ^1.2.0+3
+  expandable_text: ^2.3.0
+#  circular_countdown_timer: ^0.2.3
+#  vibration: ^1.9.0
+  badges: ^3.1.2
+  time_ago_provider: ^4.2.0
+  image_picker: ^0.8.5+3
+  lottie: ^2.7.0
+  phone_number: ^2.1.0
+  #  flutter_map: ^3.0.0
+  flutter_map: ^4.0.0
+  geolocator: ^12.0.0
+  latlong2: ^0.8.1
+#  maps_launcher: ^2.2.1
+  map_launcher: ^3.5.0
+  geocoding: ^3.0.0
+  #  flutter_icons: ^1.1.0
+  path: ^1.9.0
+#  android_alarm_manager_plus: ^3.0.4
+  shimmer: ^3.0.0
+  flutter_slidable: ^3.1.1
+  url_launcher: ^6.3.0
+  get: ^4.6.6
+  #  fontisto_flutter: ^3.1.2
+  #  in_app_update: ^4.0.1
+  firebase_messaging: ^15.1.0
+  firebase_core: ^3.4.0
+  device_info_plus: ^10.1.2
+  uuid: ^4.5.0
+  material_dialogs: ^1.1.4
+  flutter_rating_bar: ^4.0.1
+  bubble: ^1.2.1
+  file: ^7.0.0
+#  flutter_app_badger: ^1.5.0
+  package_info_plus: ^8.0.2
+#  webview_flutter: ^3.0.1
+  webview_flutter: ^4.8.0
+  #  flutter_cache_manager: ^3.3.0
+  http: ^0.13.6
+  flutter_image_compress: ^2.3.0
+#  launch_review: ^3.0.1
+#  photo_view: ^0.14.0
+#  in_app_notification: ^1.1.2
+
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.1
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^4.0.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  #  image_path: "assets/launcher_icon/smartphone1.png"
+  #  image_path: "assets/icons/783338648.png"
+  #  image_path: "assets/launcher_icon/149685781.png"
+  image_path: "assets/launcher_icon/nJYfhTRcsnmzg0ewGEYo.png"
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  #  image: assets/png/splash_logo.png
+  image: assets/png/oO4OzsRFBmXxBz4sQUdA.png
+  ios: true
+  android: true
+  color_dark: "#FFFFFF"
+  #  image_dark: assets/png/splash_logo.png
+  image_dark: assets/png/oO4OzsRFBmXxBz4sQUdA.png
+  #  android_gravity: fill
+  android_gravity: center
+  #  android_gravity: center_horizontal
+  #  ios_content_mode: scaleAspectFill
+  ios_content_mode: center
+  android_12:
+    color: "#FFFFFF"
+    #    image: assets/png/splash_logo.png
+    image: assets/png/oO4OzsRFBmXxBz4sQUdA.png
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/fonts/
+    - assets/launcher_icon/
+    - assets/image/
+    - assets/audio/
+    - assets/animations/
+    - assets/png/
+    - assets/ca/
+    - android/app/src/main/res/values-night-v31/
+    - android/app/src/main/res/mipmap-xhdpi/
+    - android/app/src/main/res/
+    - android/app/src/main/res/values-night/
+    - android/app/src/main/res/values/
+    - android/app/src/main/res/drawable/
+    - android/app/src/main/res/values-v31/
+    - android/app/src/main/res/drawable-v21/
+    - android/app/src/main/res/drawable-xxxhdpi/
+    - android/app/src/main/res/drawable-night-xxhdpi/
+    - android/app/src/main/res/drawable-night-mdpi/
+    - android/app/src/main/res/mipmap-xxhdpi/
+    - android/app/src/main/res/drawable-hdpi/
+    - android/app/src/main/res/drawable-night-xxxhdpi/
+    - android/app/src/main/res/mipmap-hdpi/
+    - android/app/src/main/res/drawable-night-xhdpi/
+    - android/app/src/main/res/drawable-xxhdpi/
+    - android/app/src/main/res/drawable-xhdpi/
+    - android/app/src/main/res/drawable-night/
+    - android/app/src/main/res/drawable-mdpi/
+    - android/app/src/main/res/raw/
+    - android/app/src/main/res/drawable-night-v21/
+    - android/app/src/main/res/drawable-night-hdpi/
+    - android/app/src/main/res/mipmap-xxxhdpi/
+    - android/app/src/main/res/mipmap-mdpi/
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Panton
+      fonts:
+        #        - asset: assets/fonts/Panton-Trial-Regular.otf
+        #        - asset: assets/fonts/Panton-Trial-Regular.ttf
+        #        - asset: assets/fonts/PantonDemo-Black.otf
+        - asset: assets/fonts/Panton-Trial-SemiBold.otf
+    #          - asset: assets/fonts/Panton-Trial-Bold.otf
+    - family: UniNeue
+      fonts:
+        - asset: assets/fonts/Fontfabric - UniNeueBold.otf
+  #        - asset: assets/fonts/Fontfabric - UniNeueHeavy.otf
+  #        - asset: assets/fonts/Fontfabric - UniNeueRegular.otf
+
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
