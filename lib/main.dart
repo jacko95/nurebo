@@ -1974,6 +1974,7 @@ Future<void> main() async {
   // });
   // FirebaseMessaging.onBackgroundMessage(backgroundHandler);
 
+
   await UserPreferences.init();
 
   // await AndroidAlarmManager.initialize();
