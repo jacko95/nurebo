@@ -102,9 +102,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
         // point: ciccio[index],
         point: LatLng(
           // businessList[index]['business_latitude'],
-          businessList[index].latitude!,
+          businessList[index].latitude ?? ciccio[0].latitude,
           // businessList[index]['business_longitude'],
-          businessList[index].longitude!,
+          businessList[index].longitude ?? ciccio[0].longitude,
         ),
         builder: (ctx) => InkWell(
           onTap: () {
@@ -223,7 +223,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     // 'https://images.pexels.com/photos/3997397/pexels-photo-3997397.jpeg?auto=compress&cs=tinysrgb&w=1600',
                     // 'https://images.pexels.com/photos/2034851/pexels-photo-2034851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     // businessList[index]['business_profile_image'],
-                    businessList[index].profile_image!,
+                    businessList[index].profile_image ?? '',
                     width: 35,
                     height: 35,
                   ),
@@ -243,7 +243,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             child: Text(
                               // 'Discoteca Lumiere',
                               // businessList[index]['business_address'],
-                              businessList[index].address!,
+                              businessList[index].address ?? '',
                               style: TextStyle(
                                   color: Colors.grey[600],
                                   fontWeight: FontWeight.w500,
@@ -261,7 +261,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             child: GradientText(
                               // 'Hallloween Night',
                               // businessList[index]['business_name'],
-                              businessList[index].name!,
+                              businessList[index].name ?? '',
                               shaderRect: Rect.fromLTWH(50.0, 50.0, 50.0, 50.0),
                               // gradient: Gradients.haze,
                               // gradient: LinearGradient(
@@ -299,7 +299,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
         // point: LatLng(45.44131,9.14952),
         // point: LatLng(45.4281857,9.1531147),
         // point: LatLng(widget.business!.latitude!, widget.business!.longitude!),
-        point: LatLng(geolocationProvider.position!.latitude, geolocationProvider.position!.longitude),
+        point: LatLng(geolocationProvider.position?.latitude ?? ciccio[0].latitude, geolocationProvider.position?.longitude ?? ciccio[0].longitude),
         // point: LatLng(userCurrentPosition.latitude, userCurrentPosition.longitude),
         builder: (context) => Material(
           type: MaterialType.transparency,
@@ -347,7 +347,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             },
           ),
         )
-    ) : Marker(point: LatLng(1, 1), builder: (BuildContext context) { return widget; });
+    ) : Marker(point: LatLng(ciccio[0].latitude, ciccio[0].longitude), builder: (BuildContext context) { return widget; });
 
     // setState(() {
       markers.add(userMarker);
@@ -391,32 +391,34 @@ class _ExploreScreenState extends State<ExploreScreen> {
         //   businessList.addAll(jsonData);
         // });
 
-        setState(() {
-          for(var e in jsonData) {
-            businessList.add(
-                Business(
-                    id: e['business_id'],
-                    name: e['business_name'],
-                    latitude: e['business_latitude'],
-                    longitude: e['business_longitude'],
-                    type_id: 1,
-                    profile_image: e['business_profile_image'],
-                    description: e['business_description'] ?? '',
-                    address: e['business_address'],
-                    phone: e['business_phone'],
-                    room_id: e['business_room_id'],
-                    max_contemporary_appointments: e['max_contemporary_appointments'],
-                    email: e['business_email'],
-                    // category_id: e['category_id'],
-                    category: Category(
-                      id: e['business_category_id'],
-                      name: e['category_name'],
-                      image: e['category_image'],
-                    )
-                )
-            );
-          }
-        });
+        if(mounted){
+          setState(() {
+            for (var e in jsonData) {
+              businessList.add(
+                  Business(
+                      id: e['business_id'],
+                      name: e['business_name'],
+                      latitude: e['business_latitude'],
+                      longitude: e['business_longitude'],
+                      type_id: 1,
+                      profile_image: e['business_profile_image'],
+                      description: e['business_description'] ?? '',
+                      address: e['business_address'],
+                      phone: e['business_phone'],
+                      room_id: e['business_room_id'],
+                      max_contemporary_appointments: e['max_contemporary_appointments'],
+                      email: e['business_email'],
+                      // category_id: e['category_id'],
+                      category: Category(
+                        id: e['business_category_id'],
+                        name: e['category_name'],
+                        image: e['category_image'],
+                      )
+                  )
+              );
+            }
+          });
+        }
 
         //print('businessList');
         //print(businessList);
@@ -446,8 +448,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
   void dispose() {
     super.dispose();
     mapController.dispose();
-    socketProvider.dispose();
-    geolocationProvider.dispose();
+    // socketProvider.dispose();
+    // geolocationProvider.dispose();
   }
 
   @override
@@ -624,7 +626,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                             child: FutureImage(
                                               // businessList[((businessList.length/3).ceil()*index)+ind]['business_profile_image'],
                                               // businessList[indice]['business_profile_image'],
-                                              businessList[indice].profile_image!,
+                                              businessList[indice].profile_image ?? '',
                                               width: MediaQuery.of(context).size.width,
                                             ),
                                           )
@@ -668,7 +670,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                                     // categories[i].name,
                                                     // businessList[((businessList.length/3).ceil()*index)+ind]['business_name'],
                                                     // businessList[indice]['business_name'],
-                                                    businessList[indice].name!,
+                                                    businessList[indice].name ?? '',
                                                     overflow: TextOverflow.ellipsis,
                                                     textAlign: TextAlign.center,
                                                     style: GoogleFonts.lato(
@@ -710,10 +712,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       // controller: mapController,
                       // center: LatLng(51.5, -0.09),
                       center: LatLng(
-                        // businessList[0]['business_latitude'],
-                        businessList.isNotEmpty ? businessList[0].latitude! : 0,
-                        // businessList[0]['business_longitude'],
-                        businessList.isNotEmpty ? businessList[0].longitude! : 0,
+                        businessList.isNotEmpty ? (businessList[0].latitude ?? ciccio[0].latitude) : ciccio[0].latitude,
+                        businessList.isNotEmpty ? (businessList[0].longitude ?? ciccio[0].longitude) : ciccio[0].longitude,
                       ),
                       zoom: 11.5,
                       onTap: (tapPosition, latLng) {

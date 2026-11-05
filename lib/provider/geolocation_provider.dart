@@ -18,7 +18,7 @@ class GeolocationProvider extends ChangeNotifier {
 
   Future<Position?> getGeolocationPermission(BuildContext context) async {
     locationPermission = await Geolocator.checkPermission();
-    // locationPermission = await Geolocator.requestPermission();
+    locationPermission = await Geolocator.requestPermission();
     // //print(locationPermission.toString());
 
     if(locationPermission == LocationPermission.always || locationPermission == LocationPermission.whileInUse) {
@@ -30,7 +30,7 @@ class GeolocationProvider extends ChangeNotifier {
       // print(position!.latitude);
       // print(position!.longitude);
       if(UserPreferences.getIsLogged()!){
-        await putUserLocation(position!.latitude, position!.longitude, context);
+        await putUserLocation(position?.latitude ?? 0, position?.longitude ?? 0, context);
       }
     }
     else if(locationPermission == LocationPermission.deniedForever){
@@ -77,7 +77,7 @@ class GeolocationProvider extends ChangeNotifier {
       // print(position?.latitude);
       // print(position?.longitude);
       if(UserPreferences.getIsLogged()!){
-        await putUserLocation(position!.latitude, position!.longitude, context);
+        await putUserLocation(position?.latitude ?? 0, position?.longitude ?? 0, context);
       }
     }
     // else if(locationPermission == LocationPermission.deniedForever){

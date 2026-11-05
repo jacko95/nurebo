@@ -6,10 +6,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
 class Utils {
-  // static const String httpServerUrl = "https://" + serverUrl;
-  static const String httpServerUrl = "http://" + serverUrl;
-  static const String serverUrl = "192.168.1.6:5000/";
-  // static const String serverUrl = "api.nurebo.com/";
+  static const String httpServerUrl = "https://" + serverUrl;
+  // static const String httpServerUrl = "http://" + serverUrl;
+  // static const String serverUrl = "192.168.1.10:5000/";
+  static const String serverUrl = "api.nurebo.com/";
   // static const String serverUrl = "192.168.46.146:5000/"; //mobile
   // static const String serverUrl = "clexira.online/";
   // static const String serverUrl = "dev.nurebo.com/";
@@ -21,9 +21,9 @@ class Utils {
   // static const String serverUrl = "18.184.152.135/";
   // static String serverUrl = "supperman.hopto.org:5000/";
   static bool isForeground = false;
-  static bool isEventsEnabled = false;
+  static bool isEventsEnabled = true;
   // static bool isSocketConnected = false;
-  static bool isSocial = false;
+  static bool isSocial = true;
   static bool isBusiness = false;
   static Socket? socket;
   static double? ipLatitude;
@@ -39,8 +39,8 @@ class Utils {
   static User? user;
   // static int tabItem = 0;
   // static int connectedSockets = 0;
-  static const version_id = 226;
-  static const version_name = '0.2.9';
+  static const version_id = 227;
+  static const version_name = '0.2.10';
   // static final version_name = packageInfo.version;
   // static bool isBottombarVisible = true;
 

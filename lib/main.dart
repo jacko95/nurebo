@@ -2336,6 +2336,8 @@ class _NureboAppState extends State<NureboApp> with WidgetsBindingObserver {
         // foundation.compute((_) => getUser, []).then((value) async {
         // await geolocationProvider.getGeolocationPermission(context);
 
+        print('value5555');
+        print(value);
         if(value != null) {
           userProvider.setUser(value);
 

@@ -67,6 +67,10 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 Future<User?> getUser() async {
   await UserPreferences.init();
 
+  print('UserPreferences.getUserId()');
+  print(UserPreferences.getUserId());
+  print(UserPreferences.getIsLogged());
+
   var url = Uri.parse("${Utils.httpServerUrl}user/${UserPreferences.getUserId()}");
 
   // Map<String, dynamic> body = {
