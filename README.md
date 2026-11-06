@@ -4,7 +4,7 @@
 <p>
     <img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter"/>
     <img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart"/>
-    <img src="https://img.shields.io/badge/Version-0.2.9-blue" alt="Version"/>
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"/>
   </p>
 </div>
 
@@ -117,7 +117,11 @@ lib/
 
 ## 📄 Licenza
 
-Questo progetto è privato / in sviluppo. Contatta il maintainer per informazioni.
+Questo progetto è rilasciato sotto la **MIT License**.
+
+Copyright (c) 2026 Domenico Politi
+
+Vedi il file [LICENSE](LICENSE) per i dettagli completi.
 
 ---
 
